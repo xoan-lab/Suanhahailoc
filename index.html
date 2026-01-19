@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sửa Nhà Hái Lộc – Prototype</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">mo</div>
+        <div class="titles">
+          <div class="game-name">Sửa Nhà Hái Lộc</div>
+          <div class="sub">Mini game in-app</div>
+        </div>
+      </div>
+
+      <div class="wallet">
+        <div class="coin-pill">
+          <span class="coin-icon">🪙</span>
+          <span id="coinCount">0</span>
+          <span class="coin-label">xu</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="phone-frame" aria-label="Phone frame">
+      <div class="screen" id="screenRoot"></div>
+
+      <nav class="tabbar" aria-label="Navigation">
+        <button class="tab" data-route="home" aria-label="Trang chủ">
+          <span class="tab-ic">🏠</span><span class="tab-tx">Trang chủ</span>
+        </button>
+        <button class="tab" data-route="tasks" aria-label="Nhiệm vụ">
+          <span class="tab-ic">✅</span><span class="tab-tx">Nhiệm vụ</span>
+        </button>
+        <button class="tab" data-route="shop" aria-label="Cửa hàng">
+          <span class="tab-ic">🛍️</span><span class="tab-tx">Cửa hàng</span>
+        </button>
+        <button class="tab" data-route="spin" aria-label="Vòng quay">
+          <span class="tab-ic">🎡</span><span class="tab-tx">Vòng quay</span>
+        </button>
+      </nav>
+    </section>
+
+    <footer class="hint">
+      <span>Gợi ý:</span> Hoàn thành nhiệm vụ nhận xu → mua đồ trang trí → mỗi ngày 1 lượt quay.
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
