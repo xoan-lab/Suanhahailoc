@@ -1,10 +1,3 @@
-/* Sửa Nhà Hái Lộc – prototype (vanilla HTML/CSS/JS)
-   - Coins (xu) earned from daily tasks
-   - Shop for decorations -> placed in room
-   - Spin wheel: 1 spin/day (localStorage)
-   Run in VS Code with Live Server.
-*/
-
 const $ = (sel, root=document) => root.querySelector(sel);
 const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
 
@@ -206,7 +199,6 @@ function renderHome(){
 <div class="room" id="room">
   <div class="wall"></div>
   <div class="floor"></div>
-
   ${!hasAny ? `
     <div class="room-empty">
       <div>
@@ -387,6 +379,27 @@ function goto(route, params={}){
 
 function setActiveTab(route){
   $$(".tab").forEach(b => b.classList.toggle("active", b.dataset.route === route));
+}
+
+function bindScreen(){
+  // ===== AVATAR: chọn ảnh từ máy =====
+const avatar = document.getElementById("avatar");
+
+if (avatar) {
+  avatar.onclick = () => {
+    const picker = document.createElement("input");
+    picker.type = "file";
+    picker.accept = "img/*";
+
+    picker.onchange = (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const url = URL.createObjectURL(file);
+      avatar.src = img;
+    };
+    picker.click();
+  };
 }
 
   // bottom tabs
@@ -654,6 +667,3 @@ function escapeHtml(s){
     toast("Đã reset dữ liệu");
   };
 })();
-
-
-
