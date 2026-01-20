@@ -389,27 +389,6 @@ function setActiveTab(route){
   $$(".tab").forEach(b => b.classList.toggle("active", b.dataset.route === route));
 }
 
-function bindScreen(){
-  // ===== AVATAR: chọn ảnh từ máy =====
-const avatar = document.getElementById("avatar");
-
-if (avatar) {
-  avatar.onclick = () => {
-    const picker = document.createElement("input");
-    picker.type = "file";
-    picker.accept = "img/*";
-
-    picker.onchange = (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-
-      const url = URL.createObjectURL(file);
-      avatar.src = img;
-    };
-    picker.click();
-  };
-}
-
   // bottom tabs
   $$(".tab").forEach(btn=>{
     btn.onclick = () => goto(btn.dataset.route);
@@ -675,5 +654,6 @@ function escapeHtml(s){
     toast("Đã reset dữ liệu");
   };
 })();
+
 
 
