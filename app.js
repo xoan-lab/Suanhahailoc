@@ -629,7 +629,7 @@ class SpinWheel {
     this.isSpinning = true;
 
     const n = this.prizes.length;
-    const spins = 6 + Math.random()*; // 6-9 rounds
+    const spins = 6 + Math.random()*3; // 6-9 rounds
     const targetIndex = Math.floor(Math.random()*n);
 
     const segmentAngle = (Math.PI*2)/n;
@@ -684,3 +684,4 @@ function escapeHtml(s){
     toast("Đã reset dữ liệu");
   };
 })();
+
