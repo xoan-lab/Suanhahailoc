@@ -215,28 +215,28 @@ body{
 /* HOME: room */
 .room-wrap{ display:flex; flex-direction:column; gap: 12px; }
 .room{
-  position:relative;
+  position: relative;
   height: 420px;
   border-radius: 22px;
-  overflow:hidden;
+  overflow: hidden;
   border: 1px solid rgba(240,212,230,.9);
-  background:
-    radial-gradient(600px 360px at 70% 20%, rgba(255,79,179,.22), transparent 55%),
-    linear-gradient(180deg, #fff, #fff1f8);
+
+  /* ===== BACKGROUND BẰNG ẢNH ===== */
+  background-image: url("img/36f2f640-bc8b-4bef-b02e-6f173bde0e28.png");
+  background-size: cover;        /* phủ kín khung */
+  background-position: 35%;   /* căn giữa */
+  background-repeat: no-repeat;
+
+  isolation: isolate;
 }
+
 .room .wall{
   position:absolute; inset:0;
   background: linear-gradient(90deg, rgba(255,255,255,.0) 0%, rgba(255,255,255,.55) 36%, rgba(255,255,255,.0) 100%);
   pointer-events:none;
   opacity:.6;
 }
-.floor{
-  position:absolute; left:0; right:0; bottom:0;
-  height: 180px;
-  background:
-    repeating-linear-gradient(90deg, rgba(222,176,199,.28) 0, rgba(222,176,199,.28) 16px, rgba(222,176,199,.18) 16px, rgba(222,176,199,.18) 32px);
-  border-top: 1px solid rgba(240,212,230,.9);
-}
+
 .room-empty{
   position:absolute; inset: 0;
   display:grid; place-items:center;
@@ -340,15 +340,20 @@ body{
 #wheelCanvas{ width: 260px; height: 260px; }
 .pointer{
   position:absolute;
-  top: -6px;
+  top: 6px;                 /* nằm trong vòng quay */
   left: 50%;
   transform: translateX(-50%);
-  width: 0; height: 0;
+  width: 0;
+  height: 0;
+
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
-  border-bottom: 22px solid rgba(230,26,141,.85);
+  border-top: 22px solid rgba(230,26,141,.85); /* 👈 mũi tên hướng xuống */
+
   filter: drop-shadow(0 6px 10px rgba(230,26,141,.18));
+  z-index: 5;
 }
+
 .prize{
   width:100%;
   text-align:center;
@@ -377,16 +382,4 @@ body{
 .toast.show{
   opacity: 1;
   transform: translateX(-50%) translateY(-3px);
-}
-/* Avatar nhỏ góc dưới trái */
-.room .avatar{
-  position: absolute;
-  left: 18px;
-  bottom: 22px;              /* nằm trên sàn một chút */
-  width: 54px;
-  height: 54px;
-  object-fit: contain;
-  z-index: 6;                /* nổi trên sàn/tường */
-  pointer-events: none;      /* không cản kéo-thả decor */
-  filter: drop-shadow(0 10px 12px rgba(25,10,25,.18));
 }
