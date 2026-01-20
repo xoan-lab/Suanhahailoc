@@ -207,18 +207,9 @@ function renderHome(){
   <div class="wall"></div>
   <div class="floor"></div>
 
-  <!-- AVATAR -->
-  <img
-    class="avatar"
-    id="avatar"
-    src="./assets/nhanvat.png"
-    alt="nhân vật"
-  />
-
   ${!hasAny ? `
     <div class="room-empty">
       <div>
-        <div class="big">🏡</div>
         <div class="tx">Nhà đang trống</div>
         <div class="muted" style="font-size:12px; margin-top:6px">
           Hãy hoàn thành nhiệm vụ để nhận xu và mua đồ trang trí.
@@ -684,4 +675,5 @@ function escapeHtml(s){
     toast("Đã reset dữ liệu");
   };
 })();
+
 
